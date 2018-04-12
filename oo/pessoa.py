@@ -1,16 +1,19 @@
 class Person():
-    def __init__(self, name=None, age=0):
+    def __init__(self,*sons, name=None, age=0):
         self.age = age
         self.name = name
+        self.sons = list(sons)
 
     def greet(self):
         return f'Hello {id(self)}'
 
 if __name__ == '__main__':
-    p = Person('Bruno')
-    print(Person.greet(p))
-    print(id(p))
-    print(p.greet())
-    print(p.name)
-    p.name = 'Bruno Falis'
-    print(p.name)
+    bruno = Person(name = 'Bruno')
+
+    vinicius = Person(name = 'Vinicius')
+
+    valeria = Person(vinicius,bruno,name = 'Valeria')
+
+    for sons in valeria.sons:
+
+        print(sons.name)
