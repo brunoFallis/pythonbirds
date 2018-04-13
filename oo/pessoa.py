@@ -17,3 +17,12 @@ if __name__ == '__main__':
     for sons in valeria.sons:
 
         print(sons.name)
+
+    valeria.lastName = 'silva'
+    print(valeria.lastName)
+    print(valeria.__dict__)
+
+    del valeria.lastName
+
+    print(valeria.__dict__)
+    print(bruno.__dict__)
