@@ -9,6 +9,15 @@ class Person():
     def greet(self):
         return f'Hello {id(self)}'
 
+
+    @staticmethod
+    def static_method():
+        return 42
+
+    @classmethod
+    def class_method(cls):
+        return f'{cls} - {cls.eyes}'
+
 if __name__ == '__main__':
     bruno = Person(name = 'Bruno')
 
@@ -37,3 +46,5 @@ if __name__ == '__main__':
     print(valeria.eyes)
     print(bruno.eyes)
     print(id(Person.eyes),id(valeria.eyes),id(bruno.eyes))
+    print(Person.static_method(),valeria.static_method())
+    print(Person.class_method(), valeria.class_method())
